@@ -1,48 +1,17 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <style type="text/css">
-        i {
-            font-size: 50px;
-        }
-    </style>
+    <title>Bootstrap demo</title>
+    @vite('resources/js/app.js')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="app">
-
-        <main class="container">
-            <h1> Laravel 10 Bootstrap 5 </h1>
-            <div class="card">
-                <div class="card-header">
-                    Icons
-                </div>
-                <div class="card-body text-center">
-                    <i class="bi bi-bag-heart-fill"></i>
-                    <i class="bi bi-app"></i>
-                    <i class="bi bi-arrow-right-square-fill"></i>
-                    <i class="bi bi-bag-check-fill"></i>
-                    <i class="bi bi-calendar-plus-fill"></i>
-                </div>
-            </div>
-        </main>
-    </div>
+    <h1>Hello, world!</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
 </html>
