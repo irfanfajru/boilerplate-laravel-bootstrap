@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('no_identitas');
             $table->date('tanggal_pesan');
             $table->integer('durasi');
-            $table->integer('total');
+            $table->bigInteger('total');
             $table->timestamps();
         });
     }
