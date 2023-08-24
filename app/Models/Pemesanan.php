@@ -23,5 +23,6 @@ class Pemesanan extends Model
 
     function hotel()
     {
-        return $this->belongsTo(hotel::class, 'id_hotel','id');}
+        return $this->belongsTo(Hotel::class, 'id_hotel', 'id');
+    }
 }

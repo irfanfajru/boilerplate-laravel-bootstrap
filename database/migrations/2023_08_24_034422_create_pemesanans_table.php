@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_hotel');
             $table->foreign('id_hotel')->references('id')->on('hotels');
-            $table->varchar('nama');
-            $table->varchar('jenis_kelamin');
+            $table->string('nama');
+            $table->string('jenis_kelamin');
             $table->integer('no_identitas');
             $table->date('tanggal_kunjungan');
             $table->integer('durasi');
@@ -32,5 +32,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('pemesanans');
     }
-
 };
