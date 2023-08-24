@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Hotel;
+use App\Models\Pemesanan;
+use Illuminate\Support\Facades\Request;
 
 class PemesananController extends Controller
 {
     function viewFormPemesanan()
     {
         $hotel = Hotel::get();
-        
-        return view('pemesanan.form-pemesanan', ['hotel'=> $hotel]);
+
+        return view('pemesanan.form-pemesanan', ['hotel' => $hotel]);
     }
 
     // function createPemesanan(Request $request)
@@ -25,7 +27,7 @@ class PemesananController extends Controller
     //     $hargaWisata = $wisata->harga;
     //     $total = ($request->pengunjung_dws * $hargaWisata) + ($request->pengunjung_anak * $hargaWisata * 0.5);
 
-        
+
 
     //     $pemesanan = Pemesanan::create([
     //         'nama' => $request->nama,
@@ -36,9 +38,22 @@ class PemesananController extends Controller
     //         'tanggal_kunjungan' => $request->tanggal_kunjungan,
     //         'id_wisata' => $request->id_wisata,
     //         'total' => $total,
-            
+
     //     ]);
 
     //     return redirect()->back()->with('success', 'Pemesanan berhasil dilakukan');
     // }
+
+    function createPemesanan(Request $request)
+    {
+
+        // validate
+        $request->validate([
+            
+        ])
+
+        $data = Pemesanan::create([
+           
+        ]);
+    }
 }
