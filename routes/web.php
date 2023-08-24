@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\PemesananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//buat tampilin halaman hotel
+Route::get('/', [HotelController::class, 'viewHome'])->name('hotel.home');
+
+//buat tampilin daftar harga
+Route::get('/daftar-harga', [HotelController::class, 'viewDaftarHarga'])->name('hotel.daftar-harga');
+
+//buat pemesanan
+Route::get('/form-pemesanan', [PemesananController::class, 'viewFormPemesanan'])->name('pemesanan.form-pemesanan');
+Route::post('/form-pemesanan', [PemesananController::class, 'createPemesanan'])->name('pemesanan.form-pemesanan');
+
+
+
