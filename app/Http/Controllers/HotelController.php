@@ -23,4 +23,10 @@ class HotelController extends Controller
         
         return view('hotel.daftar-harga', ['hotel'=> $hotel]);
     }
+
+    //menampilkan tentang kami
+    function viewTentangKami()
+    {
+        return view('hotel.tentang-kami');
+    }
 }

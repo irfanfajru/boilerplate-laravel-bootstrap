@@ -25,6 +25,9 @@ Route::get('/', [HotelController::class, 'viewHome'])->name('hotel.home');
 //buat tampilin daftar harga
 Route::get('/daftar-harga', [HotelController::class, 'viewDaftarHarga'])->name('hotel.daftar-harga');
 
+//buat tentang kami
+Route::get('/tentang-kami', [HotelController::class, 'viewTentangKami'])->name('hotel.tentang-kami');
+
 //buat pemesanan
 Route::get('/form-pemesanan', [PemesananController::class, 'viewFormPemesanan'])->name('pemesanan.form-pemesanan');
 Route::post('/form-pemesanan', [PemesananController::class, 'createPemesanan'])->name('pemesanan.form-pemesanan');

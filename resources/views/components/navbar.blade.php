@@ -7,7 +7,7 @@
                 <a class="" href="{{route('hotel.daftar-harga')}}">Daftar Harga</a>
             </li>
             <li class="">
-                <a class="" href="">Tentang Kami</a>
+                <a class="" href="{{route('hotel.tentang-kami')}}">Tentang Kami</a>
             </li>
 
             <li class="rounded h-max w-max p-2 bg-[#5cb85c] shadow">

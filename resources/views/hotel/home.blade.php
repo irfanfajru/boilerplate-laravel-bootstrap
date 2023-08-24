@@ -34,8 +34,8 @@
                 <iframe src="{{$hotel->video}}" frameborder="0" class="w-72 h-36"></iframe>
             </div>
             <div>
-                <h1 class="font-bold text-2xl mb-4">{{$hotel->nama}}</h1>
-                <p class="text-justify">{{$hotel->deskripsi}}</p>
+                <h1 class="font-bold text-3xl mb-4">{{$hotel->tipe}}</h1>
+                <p class="text-justify text-xl">{{$hotel->fasilitas}}</p>
             </div>
         </div>     
         @endforeach
