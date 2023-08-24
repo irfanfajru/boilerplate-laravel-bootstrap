@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('id_hotel')->references('id')->on('hotels');
             $table->string('nama');
             $table->string('jenis_kelamin');
-            $table->integer('no_identitas');
-            $table->date('tanggal_kunjungan');
+            $table->bigInteger('no_identitas');
+            $table->date('tanggal_pesan');
             $table->integer('durasi');
             $table->integer('total');
             $table->timestamps();

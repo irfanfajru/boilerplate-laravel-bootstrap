@@ -14,7 +14,7 @@ class Pemesanan extends Model
         'id_hotel',
         'no_identitas',
         'jenis_kelamin',
-        'tanggal_kunjungan',
+        'tanggal_pesan',
         'durasi',
         'total',
     ];
