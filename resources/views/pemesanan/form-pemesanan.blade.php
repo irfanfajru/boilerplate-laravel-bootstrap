@@ -73,7 +73,7 @@
             <!-- harga -->
             <div class="flex justify-between mb-4">
                 <label for="harga">Harga : </label>
-                <input value="{{old('harga')?number_format(old('harga'),0,'.','.'):number_format($hotel[0]->harga,0,'.','.')}}" id="harga" name="harga" type="text" value="{{$hotel[0]->harga}}" readonly class="rounded border border-gray-300 w-48" required autofocus>
+                <input value="{{old('harga')?old('harga'):number_format($hotel[0]->harga,0,'.','.')}}" id="harga" name="harga" type="text" value="{{$hotel[0]->harga}}" readonly class="rounded border border-gray-300 w-48" required autofocus>
             </div>
             <!-- durasi menginap -->
             <div class="flex justify-between mb-4">
@@ -99,8 +99,8 @@
             </div>
             <!-- total bayar -->
             <div class="flex justify-between mb-4">
-                <label for="nama" >Total : </label>
-                <input id="total" name="total" value="{{old('total')?number_format(old('total'),0,'.','.'):number_format($hotel[0]->harga,0,'.','.')}}" type="text" class="rounded border border-gray-300 w-48" readonly autofocus>
+                <label for="nama">Total : </label>
+                <input id="total" name="total" value="{{old('total')?old('total'):number_format($hotel[0]->harga,0,'.','.')}}" type="text" class="rounded border border-gray-300 w-48" readonly autofocus>
             </div>
             <!-- buttons -->
             <div class="flex justify-between space-x-10">
