@@ -35,7 +35,7 @@
             <!-- nama pemesan -->
             <div class="flex justify-between mb-4">
                 <label for="nama">Nama Pemesan : </label>
-                <input id="" value="{{old('nama')}}" name="nama" type="text" class="rounded border border-gray-300 w-48" required autofocus>
+                <input id="nama" value="{{old('nama')}}" name="nama" type="text" class="rounded border border-gray-300 w-48" required autofocus>
             </div>
             <!-- jenis kelamin -->
             <div class="flex justify-between mb-4">
@@ -49,12 +49,12 @@
             </div>
             <!-- nomor identitas -->
             <div class="flex justify-between mb-4">
-                <label for="nama">Nomor Identitas : </label>
-                <input id="" value="{{old('no_identitas')}}" name="no_identitas" type="text" class="rounded border border-gray-300 w-48" required autofocus>
+                <label for="no_identitas">Nomor Identitas : </label>
+                <input id="no_identitas" value="{{old('no_identitas')}}" name="no_identitas" type="text" class="rounded border border-gray-300 w-48" required autofocus>
             </div>
             <!-- error validasi -->
             @error('no_identitas')
-            <div class="flex justify-end font-sm font-bold text-red-600 alert alert-danger mb-4">{{ $message }}</div>
+            <div id="error-identitas" class="flex justify-end font-sm font-bold text-red-600 alert alert-danger mb-4">{{ $message }}</div>
             @enderror
             <!-- tipe kamar -->
             <div class="flex justify-between mb-4">
@@ -68,7 +68,7 @@
             <!-- tanggal pesan -->
             <div class="flex justify-between mb-4">
                 <label for="tanggal_pesan">Tanggal Pesan : </label>
-                <input value="{{old('tanggal_pesan')}}" id="" name="tanggal_pesan" type="date" class="rounded border border-gray-300 w-48" required autofocus>
+                <input value="{{old('tanggal_pesan')}}" id="tanggal_pesan" name="tanggal_pesan" type="date" class="rounded border border-gray-300 w-48" required autofocus>
             </div>
             <!-- harga -->
             <div class="flex justify-between mb-4">
@@ -85,7 +85,7 @@
             </div>
             <!-- error validas no identitas-->
             @error('durasi')
-            <div class="flex justify-end font-sm font-bold text-red-600 alert alert-danger mb-4">{{ $message }}</div>
+            <div id="error-durasi" class="flex justify-end font-sm font-bold text-red-600 alert alert-danger mb-4">{{ $message }}</div>
             @enderror
             <!-- breakfast -->
             <div class="flex mb-4">
@@ -111,7 +111,7 @@
                     <button type="submit" class="text-sm text-white font-bold">Pesat Tiket</button>
                 </div>
                 <div class="rounded h-max w-24 text-center p-2 bg-[#d9534f] shadow">
-                    <button type="reset" class="text-sm text-white font-bold">Cancel</button>
+                    <button onclick="resetForm({{json_encode($hotel)}})" type="button" class="text-sm text-white font-bold">Cancel</button>
                 </div>
             </div>
         </form>
@@ -162,6 +162,29 @@
 
         function formatNumber(num) {
             return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+        }
+
+        function resetForm(dataKamar) {
+            $('#nama').val("")
+            $('#lk').prop("checked", true)
+            $('#pr').prop("checked", false)
+            $('#no_identitas').val("")
+            $('#error-identitas').remove()
+            // remove "selected" from any options that might already be selected
+            $('#tipe_kamar option[selected="selected"]').each(
+                function() {
+                    $(this).removeAttr('selected');
+                }
+            );
+
+            // mark the first option as selected
+            $("#tipe_kamar option:first").attr('selected', 'selected');
+            $('#tanggal_pesan').val('')
+            $('#durasi').val(1)
+            $('#breakfast').prop("checked", false)
+            $('#error-durasi').remove()
+            $('#total').val(formatNumber(dataKamar[0].harga))
+            $('#harga').val(formatNumber(dataKamar[0].harga))
         }
     </script>
 </body>
