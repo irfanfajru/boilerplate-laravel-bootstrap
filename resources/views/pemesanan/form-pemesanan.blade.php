@@ -73,13 +73,13 @@
             <!-- harga -->
             <div class="flex justify-between mb-4">
                 <label for="harga">Harga : </label>
-                <input value="{{old('harga')?old('harga'):$hotel[0]->harga}}" id="harga" name="harga" type="number" value="{{$hotel[0]->harga}}" readonly class="rounded border border-gray-300 w-48" required autofocus>
+                <input value="{{old('harga')?number_format(old('harga'),0,'.','.'):number_format($hotel[0]->harga,0,'.','.')}}" id="harga" name="harga" type="text" value="{{$hotel[0]->harga}}" readonly class="rounded border border-gray-300 w-48" required autofocus>
             </div>
             <!-- durasi menginap -->
             <div class="flex justify-between mb-4">
                 <label for="durasi">Durasi menginap : </label>
                 <div class="flex space-x-2">
-                    <input value="{{old('durasi')?old('durasi'):1}}" id="durasi" name="durasi" type="number" min="1" value="1" class="rounded border border-gray-300 w-48" required autofocus>
+                    <input value="{{old('durasi')?old('durasi'):1}}" id="durasi" name="durasi" type="text" class="rounded border border-gray-300 w-48" required autofocus>
                     <p>Hari</p>
                 </div>
                 <!-- error validas -->
@@ -100,7 +100,7 @@
             <!-- total bayar -->
             <div class="flex justify-between mb-4">
                 <label for="nama">Total : </label>
-                <input id="total" name="total" value="{{old('total')?old('total'):$hotel[0]->harga}}" type="number" readonly autofocus>
+                <input id="total" name="total" value="{{old('total')?number_format(old('total'),0,'.','.'):number_format($hotel[0]->harga,0,'.','.')}}" type="text" readonly autofocus>
             </div>
             <!-- buttons -->
             <div class="flex justify-between">
@@ -123,18 +123,19 @@
         function hitungTotal(dataKamar) {
             durasi = $("#durasi").val()
             breakfast = $("#breakfast").is(":checked")
-            hargaKamar = $("#harga").val()
+            hargaKamar = 0
 
             // harga kamar
             // cek harga kamar
             dataKamar.map((val => {
                 if ($("#tipe_kamar").val() == val.id) {
-                    hargaKamar = $("#harga").val(val.harga)
+                    $("#harga").val(formatNumber(val.harga))
+                    hargaKamar = val.harga
                 }
             }))
 
             // total harga
-            totalHarga = parseInt(hargaKamar.val())
+            totalHarga = parseInt(hargaKamar)
             console.log(totalHarga)
             totalHarga = totalHarga * durasi
             // jika durasi menginap lebih dari 3 hari
@@ -148,11 +149,18 @@
             console.log(breakfast)
             if (breakfast) {
                 // tambah 80.000
-                totalHarga += 80000
+                // totalHarga += 80000
+
+                // tambah 80k/hari
+                totalHarga += (80000 * durasi)
             }
 
             // edit input total harga
-            $("#total").val(totalHarga)
+            $("#total").val(formatNumber(totalHarga))
+        }
+
+        function formatNumber(num) {
+            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
         }
     </script>
 </body>

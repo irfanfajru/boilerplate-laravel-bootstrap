@@ -67,6 +67,7 @@ class PemesananController extends Controller
 
         // hitung total harga
         $totalHarga = $this->totalHarga($request->tipe_kamar, $request->durasi, $request->breakfast);
+        // create reccord model pemesanan
         $dataPemesanan = Pemesanan::create([
             "nama" => $request->nama,
             "id_hotel" => $request->tipe_kamar,
@@ -91,7 +92,11 @@ class PemesananController extends Controller
 
         // kalo mau breakfast tambah 80000 total harganya
         if ($breakfast) {
-            $totalHarga += 80000;
+            // perhitungan untuk breakfast hanya tambah 80k
+            // $totalHarga += 80000;
+
+            // perhitungan untuk breakfast tambah 80k/hari
+            $totalHarga += (80000 * $durasi);
         }
 
         return $totalHarga;
