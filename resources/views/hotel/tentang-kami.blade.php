@@ -34,13 +34,16 @@
             </p>
             <h1 class="font-bold text-2xl mb-10 text-center">Mengapa Harus Hotel Kami?</h1>
             <div class="flex justify-between mr-20 ml-20">
-                <div class="rounded rounded-lg flex items-center justify-center font-bold text-white bg-[#f0ad4e] border-4 w-56 h-24">
+                <div class="rounded rounded-lg flex items-center justify-center space-x-4 font-bold w-60 h-24">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#66f519}</style><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>    
                     <p>Pilihan Kamar Beragam</p>
                 </div>
-                <div class="rounded rounded-lg flex items-center justify-center font-bold text-white bg-[#f0ad4e] border-4 w-56 h-24">
+                <div class="rounded rounded-lg flex items-center justify-center space-x-4 font-bold w-60 h-24">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#66f519}</style><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>        
                     <p>Harga Terjangkau</p>
                 </div>
-                <div class="rounded rounded-lg flex items-center justify-center font-bold text-white bg-[#f0ad4e] border-4 w-56 h-24">
+                <div class="rounded rounded-lg flex items-center justify-center space-x-4 font-bold w-60 h-24">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#66f519}</style><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>    
                     <p>Fasilitas Premium</p>
                 </div>
             </div>
