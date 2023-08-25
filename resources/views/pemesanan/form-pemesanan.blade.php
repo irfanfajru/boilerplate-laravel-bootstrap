@@ -40,10 +40,10 @@
             <!-- jenis kelamin -->
             <div class="flex justify-between mb-4">
                 <label for="jk">Jenis Kelamin : </label>
-                <div>
-                    <input {{old('jk')=="Laki-Laki"?"checked":""}} id="lk" name="jk" type="radio" value="Laki-Laki" class="rounded border border-gray-300 w-48" required autofocus checked>
+                <div class="space-x-1">
+                    <input {{old('jk')=="Laki-Laki"?"checked":""}} id="lk" name="jk" type="radio" value="Laki-Laki" class="rounded border border-gray-300" required autofocus checked>
                     <label for="lk">Laki-Laki</label>
-                    <input {{old('jk')=="Perempuan"?"checked":""}} id="pr" name="jk" type="radio" value="Perempuan" class="rounded border border-gray-300 w-48" required autofocus>
+                    <input {{old('jk')=="Perempuan"?"checked":""}} id="pr" name="jk" type="radio" value="Perempuan" class="rounded border border-gray-300" required autofocus>
                     <label for="pr">Perempuan</label>
                 </div>
             </div>
@@ -51,11 +51,11 @@
             <div class="flex justify-between mb-4">
                 <label for="nama">Nomor Identitas : </label>
                 <input id="" value="{{old('no_identitas')}}" name="no_identitas" type="text" class="rounded border border-gray-300 w-48" required autofocus>
-                <!-- error validasi -->
-                @error('no_identitas')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
             </div>
+            <!-- error validasi -->
+            @error('no_identitas')
+            <div class="flex justify-end font-sm font-bold text-red-600 alert alert-danger mb-4">{{ $message }}</div>
+            @enderror
             <!-- tipe kamar -->
             <div class="flex justify-between mb-4">
                 <label for="tipe_kamar">Tipe Kamar : </label>
@@ -78,32 +78,32 @@
             <!-- durasi menginap -->
             <div class="flex justify-between mb-4">
                 <label for="durasi">Durasi menginap : </label>
-                <div class="flex space-x-2">
-                    <input value="{{old('durasi')?old('durasi'):1}}" id="durasi" name="durasi" type="text" class="rounded border border-gray-300 w-48" required autofocus>
+                <div class="flex space-x-5">
+                    <input value="{{old('durasi')?old('durasi'):1}}" id="durasi" name="durasi" type="text" class="rounded border border-gray-300 w-36" required autofocus>
                     <p>Hari</p>
                 </div>
-                <!-- error validas -->
-                @error('durasi')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
             </div>
+            <!-- error validas no identitas-->
+            @error('durasi')
+            <div class="flex justify-end font-sm font-bold text-red-600 alert alert-danger mb-4">{{ $message }}</div>
+            @enderror
             <!-- breakfast -->
-            <div class="flex justify-between mb-4 space-x-4">
-                <label for="">Termasuk Breakfast : </label>
-                <div class="flex space-x-4 mb-4">
+            <div class="flex mb-4">
+                <label for="" class="w-1/2">Termasuk Breakfast : </label>
+                <div class="flex ml-4 space-x-2">
                     <input {{old('breakfast')?"checked":""}} id="breakfast" type="checkbox" name="breakfast" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
-                    <label for="breakfast" class="text-sm font-medium text-gray-900 w-80 text-justify">
+                    <label for="breakfast" class="text-sm font-medium text-gray-900">
                         Ya
                     </label>
                 </div>
             </div>
             <!-- total bayar -->
             <div class="flex justify-between mb-4">
-                <label for="nama">Total : </label>
-                <input id="total" name="total" value="{{old('total')?number_format(old('total'),0,'.','.'):number_format($hotel[0]->harga,0,'.','.')}}" type="text" readonly autofocus>
+                <label for="nama" >Total : </label>
+                <input id="total" name="total" value="{{old('total')?number_format(old('total'),0,'.','.'):number_format($hotel[0]->harga,0,'.','.')}}" type="text" class="rounded border border-gray-300 w-48" readonly autofocus>
             </div>
             <!-- buttons -->
-            <div class="flex justify-between">
+            <div class="flex justify-between space-x-10">
                 <div class="rounded h-max w-max text-center p-2 bg-[#f0ad4e] shadow">
                     <button onclick="hitungTotal({{json_encode($hotel)}})" type="button" class="text-sm text-white font-bold">Hitung Total Bayar</button>
                 </div>
